@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {box-sizing: border-box;}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: white;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color:white;
+  outline: none;
+}
+button {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  height: 25%;
+  opacity: 1.0;
+}
+button:hover {
+  opacity:1;
+}
+ .signupbtn {
+  float: left;
+  width: 50%;
+}
+.container {
+  padding: 50px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: black;
+  padding-top: 50px;
+  padding-bottom:50px;
+  padding-left: 100px;
+  padding-right:100px;
+}
+.modal-content {
+  background-color: white;
+  margin: 5% auto 15% auto; 
+  border: 1px solid rgb(82, 72, 72);
+  width: 50%;
+}
+hr {
+  border: 1px solid white;
+  margin-bottom: 25px;
+}
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 300px) {
+ .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+<center>
+
+<button onclick="document.getElementById('21e105').style.display='block'" style="width:auto;"><h1>Sign Up</h1></button>
+</center>
+<div id="21e105" class="modal">
+  <span onclick="document.getElementById('21e105').style.display='none'" class="close" title="Close Modal"></span>
+  <form class="modal-content" action="">
+    <div class="container">
+        <center>
+   <h1>SIGN UP</h1>
+</center>
+   <label for="name" ><b>Name</b></label>
+   <input type="text" placeholder="Enter your name" name="name" required>
+   <label for="username" ><b>Username</b></label>
+   <input type="text" placeholder="Enter your username" name="username" required>
+   <label for="email" ><b>Email</b></label>
+   <input type="text" placeholder="Enter your email" name="email" required>
+   <label for="password" ><b>Password</b></label>
+   <input type="password" placeholder="Enter your password" name="fname" required>
+   <center><button type="button" id="signupButton"><a href="https://github.com/Anuranjaniv">Sign in</a></button></center>
+</div>
+
+    <script>
+        document.getElementById("signupButton").addEventListener("click", function() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if (!emailRegex.test(email)) {
+                alert("Invalid email address. Please enter a valid email.");
+            } else if (!passwordRegex.test(password)) {
+                alert("Invalid password. Please make sure your password contains at least 8 characters");
+            } else {
+                alert("Sign-up Successful!");
+            }
+        });
+    </script>
+</body>
+</html>
